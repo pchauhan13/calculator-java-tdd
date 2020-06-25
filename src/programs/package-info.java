@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author heyau
+ * @author Prashant Singh Chauhan
  *
  */
 package programs;
