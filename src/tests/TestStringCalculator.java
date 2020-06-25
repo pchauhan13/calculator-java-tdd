@@ -44,6 +44,11 @@ class TestStringCalculator {
 		assertEquals(45, stringCalculator.Add("1,2,3,4,5,6,7,8,9"));
 	}
 	
+	@Test
+	void testAddWithNewLine() {
+		assertEquals(6, stringCalculator.Add("1\n2,3"));
+	}
+	
 	@BeforeAll
 	static void beforeAll() {
 		System.out.println("StringCalculator tests started...");
