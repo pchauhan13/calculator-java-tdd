@@ -93,6 +93,11 @@ class TestStringCalculator {
 	
 	@Test
 	void testAddWithDelimiterOfAnyLength() {
+		assertEquals(6, stringCalculator.Add("//[;;;]\n1;;;2;;;3"));
+	}
+	
+	@Test
+	void testAddWithDelimiterOfAnyLength2() {
 		assertEquals(6, stringCalculator.Add("//[***]\n1***2***3"));
 	}
 	

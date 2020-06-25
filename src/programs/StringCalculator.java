@@ -17,7 +17,11 @@ public class StringCalculator {
 			return sum;
 		}
 		
-		if (string.startsWith("//")) {
+		if (string.startsWith("//[")) {
+			delimiter = (String) string.subSequence(string.indexOf("[") + 1, string.indexOf("]"));
+			string = string.substring(string.indexOf("\n") + 1);
+			delimiter = delimiter.replaceAll("\\*", "\\\\*");
+		} else if (string.startsWith("//")) {
 			delimiter = Character.toString(string.charAt(2));
 			string = string.substring(4);
 		}
@@ -25,7 +29,6 @@ public class StringCalculator {
 		for (String str : string.split(delimiter)) {
 			int num = Integer.parseInt(str);
 			if (num < 0 && negs.isEmpty()) {
-//				throw new IllegalArgumentException("negatives not allowed - " + str);
 				negs = negs.concat(str);
 			} else if (num < 0) {
 				negs = negs.concat("," + str);
