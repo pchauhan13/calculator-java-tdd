@@ -26,12 +26,12 @@ class TestStringCalculator {
 	
 	@Test
 	void testAddWith1Numbers() {
-		assertEquals(0, stringCalculator.Add("1"));
+		assertEquals(1, stringCalculator.Add("1"));
 	}
 	
 	@Test
 	void testAddWith2Numbers() {
-		assertEquals(0, stringCalculator.Add("1,2"));
+		assertEquals(3, stringCalculator.Add("1,2"));
 	}
 	
 	@BeforeAll

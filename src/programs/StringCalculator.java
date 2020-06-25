@@ -10,11 +10,16 @@ package programs;
 public class StringCalculator {
 
 	public int Add(String string) {
-		// TODO Auto-generated method stub
+		int sum = 0;
 		if (string.isEmpty()) {
-			return 0;
+			return sum;
 		}
-		return -1;
+
+		String[] nums = string.split(",");
+		for (String str : nums) {
+			sum += Integer.parseInt(str);
+		}
+		return sum;
 	}
 
 }
