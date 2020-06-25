@@ -106,6 +106,11 @@ class TestStringCalculator {
 		assertEquals(6, stringCalculator.Add("//[*][%]\n1*2%3"));
 	}
 	
+	@Test
+	void testAddWithMultipleDelimitersOfAnyLength1() {
+		assertEquals(6, stringCalculator.Add("//[**][%%]\n1**2%%3"));
+	}
+	
 	@BeforeAll
 	static void beforeAll() {
 		System.out.println("StringCalculator tests started...");
