@@ -71,6 +71,18 @@ class TestStringCalculator {
 		});
 		String expectedMessage = "negatives not allowed";
 		String actualMessage = exception.getMessage();
+		System.out.println(actualMessage);
+		assertTrue(actualMessage.contains(expectedMessage));
+	}
+	
+	@Test
+	void testAddWithNegativeNumberException2() {
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+			stringCalculator.Add("-1,1,-2");
+		});
+		String expectedMessage = "negatives not allowed";
+		String actualMessage = exception.getMessage();
+		System.out.println(actualMessage);
 		assertTrue(actualMessage.contains(expectedMessage));
 	}
 	

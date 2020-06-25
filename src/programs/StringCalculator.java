@@ -11,6 +11,7 @@ public class StringCalculator {
 
 	public int Add(String string) {
 		int sum = 0;
+		String negs = "";
 		String delimiter = ",|\n";
 		if (string.isEmpty()) {
 			return sum;
@@ -23,10 +24,17 @@ public class StringCalculator {
 
 		for (String str : string.split(delimiter)) {
 			int num = Integer.parseInt(str);
-			if (num < 0) {
-				throw new IllegalArgumentException("negatives not allowed - " + str);
+			if (num < 0 && negs.isEmpty()) {
+//				throw new IllegalArgumentException("negatives not allowed - " + str);
+				negs = negs.concat(str);
+			} else if (num < 0) {
+				negs = negs.concat("," + str);
+			} else {
+				sum += num;	
 			}
-			sum += num;
+		}
+		if (!negs.isEmpty()) {
+			throw new IllegalArgumentException("negatives not allowed - " + negs);
 		}
 		return sum;
 	}
