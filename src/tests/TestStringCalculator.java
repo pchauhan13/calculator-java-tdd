@@ -64,6 +64,16 @@ class TestStringCalculator {
 		assertEquals(3, stringCalculator.Add("//;\n1;2"));
 	}
 	
+	@Test
+	void testAddWithNegativeNumberException() {
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+			stringCalculator.Add("-1,1");
+		});
+		String expectedMessage = "negatives not allowed";
+		String actualMessage = exception.getMessage();
+		assertTrue(actualMessage.contains(expectedMessage));
+	}
+	
 	@BeforeAll
 	static void beforeAll() {
 		System.out.println("StringCalculator tests started...");

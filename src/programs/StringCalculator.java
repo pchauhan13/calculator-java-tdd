@@ -22,6 +22,9 @@ public class StringCalculator {
 		}
 
 		for (String str : string.split(delimiter)) {
+			if (Integer.parseInt(str) < 0) {
+				throw new IllegalArgumentException("negatives not allowed - " + str);
+			}
 			sum += Integer.parseInt(str);
 		}
 		return sum;
