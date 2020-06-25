@@ -50,8 +50,18 @@ class TestStringCalculator {
 	}
 	
 	@Test
-	void testAddWithCustomDelimiter() {
-		assertEquals(6, stringCalculator.Add("//;\n1;2"));
+	void testAddWithCustomDelimiter1() {
+		assertEquals(3, stringCalculator.Add("//\n\n1\n2"));
+	}
+	
+	@Test
+	void testAddWithCustomDelimiter2() {
+		assertEquals(3, stringCalculator.Add("//-\n1-2"));
+	}
+	
+	@Test
+	void testAddWithCustomDelimiter3() {
+		assertEquals(3, stringCalculator.Add("//;\n1;2"));
 	}
 	
 	@BeforeAll
