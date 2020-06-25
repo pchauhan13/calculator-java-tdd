@@ -49,6 +49,11 @@ class TestStringCalculator {
 		assertEquals(6, stringCalculator.Add("1\n2,3"));
 	}
 	
+	@Test
+	void testAddWithCustomDelimiter() {
+		assertEquals(6, stringCalculator.Add("//;\n1;2"));
+	}
+	
 	@BeforeAll
 	static void beforeAll() {
 		System.out.println("StringCalculator tests started...");
