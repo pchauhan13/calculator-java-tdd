@@ -15,8 +15,7 @@ public class StringCalculator {
 			return sum;
 		}
 
-		String[] nums = string.split(",");
-		for (String str : nums) {
+		for (String str : string.split(",")) {
 			sum += Integer.parseInt(str);
 		}
 		return sum;
