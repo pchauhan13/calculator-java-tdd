@@ -34,6 +34,16 @@ class TestStringCalculator {
 		assertEquals(3, stringCalculator.Add("1,2"));
 	}
 	
+	@Test
+	void testAddWith6Numbers() {
+		assertEquals(21, stringCalculator.Add("1,2,3,4,5,6"));
+	}
+	
+	@Test
+	void testAddWith9Numbers() {
+		assertEquals(45, stringCalculator.Add("1,2,3,4,5,6,7,8,9"));
+	}
+	
 	@BeforeAll
 	static void beforeAll() {
 		System.out.println("StringCalculator tests started...");
