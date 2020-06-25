@@ -113,7 +113,7 @@ class TestStringCalculator {
 	
 	@Test
 	void testGetCalledCount() {
-		assertEquals(16, stringCalculator.GetCalledCount());
+		assertEquals(3, stringCalculator.GetCalledCount());
 	}
 	
 	@BeforeAll

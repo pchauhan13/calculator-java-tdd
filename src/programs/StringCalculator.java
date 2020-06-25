@@ -8,8 +8,11 @@ package programs;
  *
  */
 public class StringCalculator {
+	
+	static int calledCount = 0;
 
 	public int Add(String string) {
+		calledCount = calledCount + 1;
 		int sum = 0;
 		String negs = "";
 		String delimiter = ",|\n";
@@ -46,6 +49,11 @@ public class StringCalculator {
 			throw new IllegalArgumentException("negatives not allowed - " + negs);
 		}
 		return sum;
+	}
+
+	public int GetCalledCount() {
+		System.out.println(calledCount);
+		return calledCount;
 	}
 
 }
