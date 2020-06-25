@@ -29,7 +29,7 @@ public class StringCalculator {
 				negs = negs.concat(str);
 			} else if (num < 0) {
 				negs = negs.concat("," + str);
-			} else {
+			} else if (num <= 1000) {
 				sum += num;	
 			}
 		}
