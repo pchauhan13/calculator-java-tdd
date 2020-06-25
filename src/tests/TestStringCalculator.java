@@ -91,6 +91,11 @@ class TestStringCalculator {
 		assertEquals(2, stringCalculator.Add("2,1001"));
 	}
 	
+	@Test
+	void testAddWithDelimiterOfAnyLength() {
+		assertEquals(6, stringCalculator.Add("//[***]\n1***2***3"));
+	}
+	
 	@BeforeAll
 	static void beforeAll() {
 		System.out.println("StringCalculator tests started...");
